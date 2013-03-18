@@ -1,0 +1,58 @@
+<!--
+<h1>Listing quotes</h1>
+
+<table>
+  <tr>
+    <th>Body</th>
+    <th>Reference</th>
+    <th>Remark</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @quotes.each do |quote| %>
+  <tr>
+    <td><%= quote.body %></td>
+    <td><%= quote.reference %></td>
+    <td><%= quote.remark %></td>
+    <td><%= link_to 'Show', quote %></td>
+    <td><%= link_to 'Edit', edit_quote_path(quote) %></td>
+    <td><%= link_to 'Destroy', quote, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Quote', new_quote_path %>
+-->
+
+app/views/quotes/index.html.erb
+<div class="row">
+  <div class="span12">
+    <% if @quotes.empty? %>
+      <p>There are no quotes</p>
+    <% else %>
+      <% @quotes.each do |quote| %>
+        <p>
+          <blockquote><%= link_to quote.body, quote %></blockquote>
+        </p>
+        <div align="right">
+          <p>
+            <i><%= quote.reference %></i><br />
+            <%= link_to 'Edit', edit_quote_path(quote) %>
+            <%= link_to 'Destroy', quote, confirm: 'Are you sure?', method: :delete %>
+          </p>
+        </div>
+
+        <div class="page-header", style="margin-top: 10px">
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="span4">
+    <%= render 'sidebar' %>
+  </div>
+</div>

@@ -1,0 +1,61 @@
+<%= form_for(@quote) do |f| %>
+  <% if @quote.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@quote.errors.count, "error") %> prohibited this quote from being saved:</h2>
+
+      <ul>
+      <% @quote.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <fieldset>
+    <div class="clearfix">
+      <%= f.label :body, 'Quote'%>
+      <div class="input">
+        <%= f.text_area :body, :class => "xxlarge", :rows=> "5" %>
+        <span class="help-block">Quote body : Max 500 characters</span>
+      </div>
+    </div>
+
+    <div class="clearfix">
+      <%= f.label :reference, 'Quote from'%>
+      <div class="input">
+        <%= f.text_area :reference, :class => "xxlarge" %>
+        <span class="help-block">Reference Person, Book : Max 100 characters</span>
+      </div>
+    </div>
+
+    <div class="clearfix">
+      <%= f.label :remark, 'Quote'%>
+      <div class="input">
+        <%= f.text_area :remark, :class => "xxlarge", :rows=> "5" %>
+        <span class="help-block">Remark about this Quote : Max 500 characters</span>
+      </div>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Submit", :class => "btn primary", :name => "commit" %>
+    </div>
+  </fieldset>
+
+  <!--
+  <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </div>
+  <div class="field">
+    <%= f.label :reference %><br />
+    <%= f.text_field :reference %>
+  </div>
+  <div class="field">
+    <%= f.label :remark %><br />
+    <%= f.text_area :remark %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+-->
+<% end %>

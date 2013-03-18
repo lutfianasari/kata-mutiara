@@ -1,4 +1,19 @@
+# == Route Map (Updated 2013-03-18 15:29)
+#
+#     quotes GET    /quotes(.:format)          quotes#index
+#            POST   /quotes(.:format)          quotes#create
+#  new_quote GET    /quotes/new(.:format)      quotes#new
+# edit_quote GET    /quotes/:id/edit(.:format) quotes#edit
+#      quote GET    /quotes/:id(.:format)      quotes#show
+#            PUT    /quotes/:id(.:format)      quotes#update
+#            DELETE /quotes/:id(.:format)      quotes#destroy
+#       root        /                          quotes#index
+#
+
 SocialQuotes::Application.routes.draw do
+  resources :quotes
+  root :to => "quotes#index" 
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -10,6 +10,8 @@ gem 'psych'
 gem 'execjs'
 gem 'therubyracer' 
 
+gem 'less-rails-bootstrap'
+
 gem 'heroku'
 
 group :production do
@@ -34,6 +36,8 @@ gem 'jquery-rails'
 group :development, :test do
 	gem 'sqlite3'
 	gem 'rspec-rails'
+	gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git' 
+	gem 'faker'
 end 
 
 # To use ActiveModel has_secure_password
