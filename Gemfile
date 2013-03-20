@@ -11,6 +11,7 @@ gem 'execjs'
 gem 'therubyracer' 
 
 gem 'less-rails-bootstrap'
+gem 'kaminari'
 
 gem 'heroku'
 
