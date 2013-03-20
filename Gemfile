@@ -12,6 +12,7 @@ gem 'therubyracer'
 
 gem 'less-rails-bootstrap'
 gem 'kaminari'
+gem 'devise'
 
 gem 'heroku'
 
